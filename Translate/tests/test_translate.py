@@ -22,14 +22,14 @@ __status__ = "Development"
 
 
 def test_transcripts_file_corrupt():
-    transcripts_file_path = '../data/transcripts_bad.txt'
+    transcripts_file_path = './data/transcripts_bad.txt'
     transcripts = defaultdict(dict)
     with pytest.raises(SystemExit):
         load_transcripts(transcripts_file_path, transcripts)
 
 
 def test_transcripts_size():
-    transcripts_file_path = '../data/transcripts.txt'
+    transcripts_file_path = './data/transcripts.txt'
     transcripts = defaultdict(dict)
     load_transcripts(transcripts_file_path, transcripts)
     assert len(transcripts) == 2
@@ -78,24 +78,24 @@ def test_validate_cigar6():
 
 
 def test_queries_file_corrupt():
-    queries_file_path = '../data/queries_bad.txt'
-    transcripts_file_path = '../data/transcripts.txt'
+    queries_file_path = './data/queries_bad.txt'
+    transcripts_file_path = './data/transcripts.txt'
     transcripts = defaultdict(dict)
     load_transcripts(transcripts_file_path, transcripts)
-    output_file_path = '../data/output/output.txt'
-    log_file_path = '../data/output/translate.log'
+    output_file_path = './data/output/output.txt'
+    log_file_path = './data/output/translate.log'
     configure_logging(log_file_path)
     with pytest.raises(SystemExit):
         process_queries(transcripts, queries_file_path, output_file_path)
 
 
 def test_queries_valid_query():
-    queries_file_path = '../data/query_1.txt'
-    transcripts_file_path = '../data/transcripts.txt'
+    queries_file_path = './data/query_1.txt'
+    transcripts_file_path = './data/transcripts.txt'
     transcripts = defaultdict(dict)
     load_transcripts(transcripts_file_path, transcripts)
-    output_file_path = '../data/output/output.txt'
-    log_file_path = '../data/output/translate.log'
+    output_file_path = './data/output/output.txt'
+    log_file_path = './data/output/translate.log'
     configure_logging(log_file_path)
     process_queries(transcripts, queries_file_path, output_file_path)
     assert process_queries.chr == 'CHR1'
@@ -103,12 +103,12 @@ def test_queries_valid_query():
 
 
 def test_queries_insertion_query():
-    queries_file_path = '../data/query_2.txt'
-    transcripts_file_path = '../data/transcripts.txt'
+    queries_file_path = './data/query_2.txt'
+    transcripts_file_path = './data/transcripts.txt'
     transcripts = defaultdict(dict)
     load_transcripts(transcripts_file_path, transcripts)
-    output_file_path = '../data/output/output.txt'
-    log_file_path = '../data/output/translate.log'
+    output_file_path = './data/output/output.txt'
+    log_file_path = './data/output/translate.log'
     configure_logging(log_file_path)
     process_queries(transcripts, queries_file_path, output_file_path)
     assert process_queries.chr == 'CHR1'
@@ -116,12 +116,12 @@ def test_queries_insertion_query():
 
 
 def test_queries_genome_coordinate_not_found():
-    queries_file_path = '../data/query_3.txt'
-    transcripts_file_path = '../data/transcripts.txt'
+    queries_file_path = './data/query_3.txt'
+    transcripts_file_path = './data/transcripts.txt'
     transcripts = defaultdict(dict)
     load_transcripts(transcripts_file_path, transcripts)
-    output_file_path = '../data/output/output.txt'
-    log_file_path = '../data/output/translate.log'
+    output_file_path = './data/output/output.txt'
+    log_file_path = './data/output/translate.log'
     configure_logging(log_file_path)
     process_queries(transcripts, queries_file_path, output_file_path)
     assert process_queries.chr == '-'
@@ -129,12 +129,12 @@ def test_queries_genome_coordinate_not_found():
 
 
 def test_queries_transcript_not_found():
-    queries_file_path = '../data/query_4.txt'
-    transcripts_file_path = '../data/transcripts.txt'
+    queries_file_path = './data/query_4.txt'
+    transcripts_file_path = './data/transcripts.txt'
     transcripts = defaultdict(dict)
     load_transcripts(transcripts_file_path, transcripts)
-    output_file_path = '../data/output/output.txt'
-    log_file_path = '../data/output/translate.log'
+    output_file_path = './data/output/output.txt'
+    log_file_path = './data/output/translate.log'
     configure_logging(log_file_path)
     process_queries(transcripts, queries_file_path, output_file_path)
     assert process_queries.chr == '-'
