@@ -19,7 +19,7 @@ The transcripts file has one mapping entry per transcript.
 
 For each query (transcript name and query coordinate) the program outputs the corresponding chromosome name and chromosome coordinate (if found). 
 
-If a corresponding chromosome name and chromosome coordinate not found for a query transcript and coordinate then the program outputs ‘-‘ or chromosome name and chromosome coordinate. 
+If a corresponding chromosome name and chromosome coordinate not found for a query transcript and coordinate then the program outputs ‘-‘ for chromosome name and chromosome coordinate. 
 
 In case of insertion in transcript, for any transcript coordinate that is part of the insertion, the program outputs the chromosome coordinate at the start position of insertion. For example, for the CIGAR mapping string 8M2I with starting position 3, the chromosome coordinates for the transcript coordinates 8 and 9 would be 10. 
 
@@ -42,7 +42,7 @@ $ /Translate/bin/translate -t <transcripts_file_path> -q <queries_file_path> -o 
 
 ### Using the .py file: 
 
-Requires python version >= 3.8 
+Requires python version >= 3.0 
 
 Requires ‘cigar’ python package [‘pip install cigar’] 
 
