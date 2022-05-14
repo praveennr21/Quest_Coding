@@ -26,28 +26,15 @@ In case of insertion in transcript, for any transcript coordinate that is part o
 
 ## File structure: 
 
-Translate/ 
-
-| 
-
-|__ bin/ 
-
-|     |__ translate 
-
-| 
-
-|__ translate/ 
-
-|     |__ translate.py 
-
-| 
-
-|__ tests/ 
-
-|     |__ test_translate.py     
-
+* Translate
+   * bin
+     * translate
+   * translate
+     * translate.py
+   * data
+   * tests
+     * test_translate.py
  
-
 ## Run the program: 
 
 ### Using the executable: 
